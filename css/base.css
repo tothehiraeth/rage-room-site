@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.btn {
+  padding: 16px 28px;
+  background: red;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}

@@ -1,0 +1,25 @@
+.setup-wrap {
+  max-width: 500px;
+  margin: auto;
+  padding-top: 100px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: 1px solid #444;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}

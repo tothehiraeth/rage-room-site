@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rage Room</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/room.css" />
+</head>
+
+<body class="room">
+
+  <!-- Left panel -->
+  <aside class="panel left">
+    <h3 class="panel-title">SELECT WEAPON</h3>
+
+    <button class="weapon btn-red" data-weapon="fist">👊 FIST</button>
+    <button class="weapon" data-weapon="bat">🪵 BAT</button>
+    <button class="weapon" data-weapon="knife">🔪 KNIFE</button>
+    <button class="weapon" data-weapon="hammer">🔨 HAMMER</button>
+  </aside>
+
+  <!-- Center -->
+  <main class="stage" id="stage">
+    <div class="target-name" id="targetName">TARGET</div>
+
+    <div class="avatar-wrap">
+      <img id="avatarImg" class="avatar-img" src="assets/male.png" alt="avatar" />
+      <canvas id="fxCanvas" class="fx-canvas"></canvas>
+    </div>
+
+    <div class="input-row">
+      <input id="rageInput" class="rage-input" placeholder="Type your rage and press Enter..." />
+      <button id="releaseBtn" class="btn btn-red">RELEASE</button>
+    </div>
+
+    <div class="controls">
+      <button id="hitBtn" class="btn btn-red">🔊 HIT</button>
+      <button id="resetBtn" class="btn">RESET</button>
+    </div>
+  </main>
+
+  <!-- Right panel -->
+  <aside class="panel right">
+    <h3 class="panel-title">DAMAGE</h3>
+    <div class="damage-bar">
+      <div id="damageFill" class="damage-fill"></div>
+    </div>
+  </aside>
+
+  <script src="js/room.js"></script>
+</body>
+</html>

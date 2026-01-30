@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Setup Target</title>
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/setup.css" />
+</head>
+
+<body>
+  <div class="setup-wrap">
+    <h1>SETUP YOUR <span style="color:red">TARGET</span></h1>
+
+    <label>NAME</label>
+    <input id="nameInput" placeholder="Enter name..." />
+
+    <label>GENDER</label>
+    <div class="row">
+      <button id="maleBtn" class="btn btn-red">MALE</button>
+      <button id="femaleBtn" class="btn">FEMALE</button>
+    </div>
+
+    <label>AVATAR</label>
+
+<div class="row">
+  <button id="useAvatarBtn" class="btn btn-red">USE AVATAR</button>
+  <label class="btn">
+    UPLOAD IMAGE
+    <input type="file" id="imgUpload" accept="image/*" hidden />
+  </label>
+</div>
+
+<img id="previewImg" style="display:none; max-width:200px; margin-top:10px;" />
+
+
+    <button id="enterBtn" class="btn btn-red">ENTER RAGE ROOM</button>
+  </div>
+
+  <script src="js/setup.js"></script>
+</body>
+</html>

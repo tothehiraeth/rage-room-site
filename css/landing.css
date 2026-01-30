@@ -1,0 +1,31 @@
+.landing-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 80px;
+  margin: 0;
+}
+
+.title-red {
+  color: red;
+}
+
+.question {
+  font-size: 32px;
+}
+
+.desc {
+  max-width: 600px;
+  opacity: 0.8;
+}
+
+.fineprint {
+  margin-top: 40px;
+  opacity: 0.4;
+}

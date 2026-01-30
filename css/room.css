@@ -1,0 +1,203 @@
+/* =====================
+   BASE LAYOUT
+===================== */
+
+body.room{
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.85)),
+    url("../assets/garage-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* =====================
+   PANELS
+===================== */
+
+.panel{
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(216,31,31,0.6);
+  padding: 14px;
+}
+
+.panel-title{
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* =====================
+   WEAPONS
+===================== */
+
+.weapon{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(40,40,40,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.weapon.btn-red{
+  background: rgb(216,31,31);
+}
+
+/* =====================
+   CENTER STAGE
+===================== */
+
+.stage{
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* target name */
+.target-name{
+  width: 100%;
+  max-width: 620px;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* =====================
+   AVATAR + FX
+===================== */
+
+.avatar-wrap{
+  width: 100%;
+  max-width: 620px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.avatar-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+/* Make sure clicks go to the wrapper, not the image */
+.avatar-img { pointer-events: none; }
+
+/* Canvas already has pointer-events:none, keep it */
+.fx-canvas { pointer-events: none; }
+
+/* optional: makes it feel clickable */
+.avatar-wrap { cursor: crosshair; }
+
+.fx-canvas{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* =====================
+   INPUT + CONTROLS
+===================== */
+
+.input-row{
+  width: 100%;
+  max-width: 620px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 130px;
+  gap: 8px;
+}
+
+.rage-input{
+  height: 42px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.controls{
+  width: 100%;
+  max-width: 620px;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn{
+  height: 42px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  background: rgba(25,25,25,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.btn-red{
+  background: rgb(216,31,31);
+}
+
+/* =====================
+   DAMAGE BAR
+===================== */
+
+.damage-bar{
+  height: 14px;
+  background: rgba(255,255,255,0.15);
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.damage-fill{
+  height: 100%;
+  width: 0%;
+  background: rgb(216,31,31);
+}
+
+/* =====================
+   HIT SHAKE
+===================== */
+
+.avatar-wrap.hit{
+  animation: shake 120ms ease-in-out;
+}
+
+@keyframes shake{
+  0%{ transform: translate(0,0); }
+  25%{ transform: translate(-6px,4px); }
+  50%{ transform: translate(6px,-4px); }
+  75%{ transform: translate(-4px,3px); }
+  100%{ transform: translate(0,0); }
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 900px){
+  body.room{
+    grid-template-columns: 1fr;
+  }
+}
