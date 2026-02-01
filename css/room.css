@@ -201,3 +201,62 @@ body.room{
     grid-template-columns: 1fr;
   }
 }
+/* Stronger weapon-specific shakes */
+.avatar-wrap.shake-fist   { animation: shakeFist 140ms ease-in-out; }
+.avatar-wrap.shake-bat    { animation: shakeBat  180ms ease-in-out; }
+.avatar-wrap.shake-knife  { animation: shakeKnife 140ms ease-in-out; }
+.avatar-wrap.shake-hammer { animation: shakeHammer 220ms ease-in-out; }
+
+@keyframes shakeFist{
+  0%{transform:translate(0,0) rotate(0) scale(1)}
+  25%{transform:translate(-10px,6px) rotate(-1deg) scale(1.02)}
+  50%{transform:translate(12px,-8px) rotate(1.5deg) scale(1.03)}
+  75%{transform:translate(-8px,6px) rotate(-1deg) scale(1.02)}
+  100%{transform:translate(0,0) rotate(0) scale(1)}
+}
+@keyframes shakeKnife{
+  0%{transform:translate(0,0) rotate(0) scale(1)}
+  25%{transform:translate(-8px,4px) rotate(-2deg) scale(1.02)}
+  50%{transform:translate(10px,-6px) rotate(2deg) scale(1.03)}
+  75%{transform:translate(-7px,4px) rotate(-1deg) scale(1.02)}
+  100%{transform:translate(0,0) rotate(0) scale(1)}
+}
+@keyframes shakeBat{
+  0%{transform:translate(0,0) rotate(0) scale(1)}
+  20%{transform:translate(-14px,10px) rotate(-3deg) scale(1.04)}
+  40%{transform:translate(16px,-12px) rotate(3deg) scale(1.05)}
+  60%{transform:translate(-12px,9px) rotate(-2deg) scale(1.04)}
+  80%{transform:translate(10px,-6px) rotate(2deg) scale(1.03)}
+  100%{transform:translate(0,0) rotate(0) scale(1)}
+}
+@keyframes shakeHammer{
+  0%{transform:translate(0,0) rotate(0) scale(1)}
+  15%{transform:translate(-18px,14px) rotate(-4deg) scale(1.06)}
+  30%{transform:translate(20px,-16px) rotate(4.5deg) scale(1.08)}
+  45%{transform:translate(-16px,12px) rotate(-3.5deg) scale(1.06)}
+  60%{transform:translate(14px,-10px) rotate(3deg) scale(1.05)}
+  75%{transform:translate(-10px,8px) rotate(-2deg) scale(1.03)}
+  100%{transform:translate(0,0) rotate(0) scale(1)}
+}
+.weapon-fx{
+  position:absolute;
+  left:0; top:0;
+  width:0; height:0;
+  pointer-events:none;
+  z-index: 6;
+}
+
+.weapon-fx .icon{
+  position:absolute;
+  transform: translate(-50%,-50%);
+  font-size: 56px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+  animation: weaponSwing 220ms ease-out forwards;
+}
+
+@keyframes weaponSwing{
+  0%   { transform: translate(-50%,-50%) rotate(-35deg) scale(0.9); opacity:0.0; }
+  15%  { opacity:1; }
+  60%  { transform: translate(-50%,-50%) rotate(15deg) scale(1.05); opacity:1; }
+  100% { transform: translate(-50%,-50%) rotate(25deg) scale(0.95); opacity:0; }
+}
